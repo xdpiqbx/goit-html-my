@@ -210,14 +210,14 @@ footer{
         font-style: normal;
         font-weight: 900;
         font-size: 44px;
-        line-height: 60px;
+        line-height: 1.36;
         text-align: center;
         letter-spacing: 0.06em;
         text-transform: uppercase;
     }
 
     .hero button{
-        line-height: 30px;
+        line-height: 1.9;
         background-color: var(--main-hover-color);
         font-family: var(--main-font-family);
         color: var(--secondary-bg-color);
@@ -248,7 +248,7 @@ footer{
     margin: 0px;
     padding-bottom: 50px;
     font-size: 36px;
-    line-height: 42px;
+    line-height: 1.17;
 }
 
 
@@ -257,7 +257,7 @@ footer{
 .hidden-header-h{
     margin: 0px;
     padding: 0px;
-    line-height: 0px;
+    line-height: 0;
     font-size: 0;
 }
 
@@ -291,7 +291,7 @@ footer{
             font-style: normal;
             font-weight: 400;
             font-size: 14px;
-            line-height: 24px;
+            line-height: 1.7;
             color: var(--secondary-font-color);
         }
 
@@ -367,7 +367,7 @@ footer{
             font-style: normal;
             font-weight: 400;
             font-size: 16px;
-            line-height: 19px;
+            line-height: 1.9;
             text-align: center;
             color: var(--secondary-font-color);
         }
