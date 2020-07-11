@@ -18,20 +18,18 @@
     
     --main-hover-color: #2196F3;
 
-    --max-width: 1250px;
+    --max-width: 1200px;
 }
 
-
-
-/* html ===================================================================== */
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-    *,
-    *::before,
-    *::after { box-sizing: inherit; }
-
-
+  
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
 
 /* body ===================================================================== */
 body{
@@ -40,56 +38,58 @@ body{
     letter-spacing: 0.03em;
 }
 
-
-
 /* some reset ===================================================================== */
 a{ text-decoration: none; }
 
 address{ font-style: normal; }
 
-ul{
-    margin: 0;
-    padding-left: 0;
+ul{ 
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-li{
-    margin-right: 30px;
-    margin-bottom: 30px;
-    display: inline-block;
+p, h2{
+    margin: 0;
 }
-
-
 
 /* Header ===================================================================== */
 header{
     color: var(--main-font-color);
-    border-bottom: 1px solid var(--header-border-color);
+    border: 1px solid var(--header-border-color);;
 }
 
-/* костыль, убираю борт чтоб небыло светлого просвета между ховер еффектом меню (синяя полоска) и hero блоком*/
-.index-header{
-    border-bottom: 0px; 
+.section{
+    margin: 0 auto;
+    max-width: var(--max-width);
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-    header a{ display: inline-block; }
+.index-no-border{
+    border: 0;
+}
+
+.wrapper-in-header{
+    height: 80px;
+    justify-content: space-between;
+}
+
+.flex-container{
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
 
     header li, header a{
-        margin-bottom: 0px;
-        line-height: 80px;
+        display: block;
+        line-height: 77px;
         font-weight: 700;
-        vertical-align: middle;
         color: var(--main-font-color);
     }
 
-    .wrapper-in-header{
-        margin:0 auto;
-        max-width: var(--max-width);
-    }
-    
-        .top .logo{ margin-right: 85px; }
-
         .logo{
+            margin-right: 85px;
             font-family: var(--logo-font-family);
             font-size: 26px;
             color: var(--main-font-color);
@@ -101,24 +101,31 @@ header{
         .top,
         .top-nav-ul,
         .addres-header{
-            display: inline-block;
             font-size: 14px;
         }
 
+            .top-nav-ul li:not(:last-child){
+                margin-right: 50px;
+            }
+        
             .addres-header a{ color: var(--secondary-font-color); }
 
-        .contact li{
-            background-repeat: no-repeat;
-            background-position: left;
-        }
+            .contact li:not(:last-child){
+                margin-right: 30px;
+            }
+            
+            .contact li{
+                background-repeat: no-repeat;
+                background-position: left;
+            }
 
             .envelope{ /* small icon */
-                padding-left: 25px;
+                padding-left: 20px;
                 background-image: url("../images/envelope.svg");
             }
 
             .phone{ /* small icon */
-                padding-left: 20px;
+                padding-left: 15px;
                 background-image: url("../images/smartphone.svg");
             }
 
@@ -127,47 +134,57 @@ header{
     .top-nav-ul a:hover,
     .top-nav-ul a:focus{
         color: var(--main-hover-color);
-        border-top: 3px solid var(--main-font-on-dark-fon-color); /* костыль, чтоб не прыгало имя ссылки */
-        border-bottom: 3px solid var(--main-hover-color);
+        border-bottom: solid 3px var(--main-hover-color);
+        border-collapse: collapse;
     }
-
+    
     address a:hover,
-    address a:focus{ color: var(--main-hover-color); }
-
+    address a:focus{
+        color: var(--main-hover-color);
+    }
 
 
 /*Footer ===================================================================== */
 footer{
-    margin-top: 63px;
-    padding: 60px 0;
     color: var(--main-font-on-dark-fon-color);
     background-color: var(--footer-bg-color);
 }
     .wrapper-in-footer{
-        margin:20 auto;
+        padding-top: 60px;
         max-width: var(--max-width);
-        display: block;
-    }
-
-    .wrapper-in-footer > div{
-        margin-bottom: 20px;
     }
 
     footer div{
-        margin-right: 70px;
-        display: inline-block;
         vertical-align: top;
     }
 
+    .logo-and-contact{
+        margin-right: 70px;
+        padding-bottom: 60px;
+    }
+
+    .logo-and-contact .logo,
+    .join b,
+    .subscribe b{
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .join{
+        width: 206px;
+        margin-right: 94px;
+    }
+
+    .join .social{
+        justify-content: space-between;
+    }
+    
         footer .logo{ color: var(--main-font-on-dark-fon-color); }
 
-        .addres-footer ul{ margin-top: 20px; }
+    .addres-footer ul li{
+        margin-bottom: 9px;
+    }
 
-            .addres-footer ul li{
-                display: block;
-                margin-bottom: 10px;
-            }
-    
     .addres-footer ul li a{
         font-family: var(--main-font-family);
         font-style: normal;
@@ -177,23 +194,14 @@ footer{
         color: var(--address-footer-a-color);
     }
 
-.join ul{
-    margin-top: 20px;
-}
-
-.join li{
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-
 
 /*Main element ===================== index.html ================================================*/
 .hero{
     text-align: center;
-    height: 600px;
     background-image: url("../images/hero-image.jpg");
     background-position: center;
+    height: 600px;
+    margin-bottom: 94px;
 }
 
     .wrapper-bg-transparent-in-hero{
@@ -202,9 +210,9 @@ footer{
     }
 
     .hero h1{
+        margin: 0;
         padding-top: 200px;
-        margin-top: 0px;
-        margin-bottom: 30px;
+        padding-bottom: 30px;
         color:var(--main-font-on-dark-fon-color);
         font-family: var(--main-font-family);
         font-style: normal;
@@ -217,36 +225,24 @@ footer{
     }
 
     .hero button{
+        padding: 10px 32px;
         line-height: 1.9;
         background-color: var(--main-hover-color);
         font-family: var(--main-font-family);
         color: var(--secondary-bg-color);
         font-size: 16px;
-        border-radius: 4px;
-        border-style: none;
         font-weight: 700;
-        padding: 10px 32px 10px 32px;
         letter-spacing: 0.06em;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        border: 0;
+        border-radius: 4px;
     }
-
-.benefits,
-.what-we-do,
-.wrapper-full-width,
-.our-team,
-.clients,
-.wrapper-in-footer,
-.portfolio{
-    margin: 0 auto;
-}
 
 .wrapper-full-width{
     background-color: var(--secondary-bg-color);
 }
 
 .section-title{
-    padding-top: 94px;
-    margin: 0px;
-    padding-bottom: 50px;
     font-size: 36px;
     line-height: 1.17;
 }
@@ -254,32 +250,30 @@ footer{
 
 
 /*in section benefits ===================== index.html ================================================*/
+.benefits{
+    margin-bottom: 94px;
+}
+
 .hidden-header-h{
-    margin: 0px;
-    padding: 0px;
     line-height: 0;
     font-size: 0;
 }
 
-.benefits{
-    padding-top: 94px;
-}
-
 .benefits-list{
+    justify-content: space-between;
     text-align: center;
 }
 
     .benefits-list li{
         width: 270px;
         text-align: left;
-        margin-right: 30px;
     }
 
         .benefits-list div{
             text-align: center;
             background-color: var(--secondary-bg-color);
-            border-radius: 4px;
             line-height: 120px;
+            border-radius: 4px;
         }
 
             .benefits-list div img{
@@ -299,57 +293,55 @@ footer{
 
 /*in section what-we-do ===================== index.html ================================================*/
 .what-we-do{
-    text-align: center;
-    padding-bottom: 94px;
+    margin-bottom: 94px;
 }
 
-    .what-we-do li{
-        width: 370px;
-        height: 294px;
-        margin-right: 30px;
-        margin-bottom: 30px;
-        background-position: center;
+.section-title{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.what-we-do-list{
+    justify-content: space-between;
+}
+
+.what-we-do a{
+    color: var(--main-font-on-dark-fon-color);
+}
+
+    .what-we-do h3{
+        background-color: var(--what-we-do-card-header-bg-color);
+        line-height: 70px;
+        font-family: var(--main-font-family);
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
     }
-
-    .what-we-do-li-1{ background-image: url("../images/what-we-do/notebook.jpg"); }
-    .what-we-do-li-2{ background-image: url("../images/what-we-do/smart.jpg"); }
-    .what-we-do-li-3{ background-image: url("../images/what-we-do/mac.jpg"); }
-
-        .what-we-do a{
-            margin-top: 224px;
-            display: block;
-            color: var(--main-font-on-dark-fon-color);
-        }
-
-            .what-we-do h3{
-                background-color: var(--what-we-do-card-header-bg-color);
-                line-height: 70px;
-                margin: 0;
-                font-family: var(--main-font-family);
-                font-style: normal;
-                font-weight: 600;
-                font-size: 14px;
-                text-align: center;
-                letter-spacing: 0.1em;
-                text-transform: uppercase;
-            }
 
 
 
 /*in section our-team ===================== index.html ================================================*/
 .our-team{
     text-align: center;
+}
+
+.our-team-list{
+    justify-content: space-between;
     padding-bottom: 94px;
+}
+
+.our-team h2{
+    padding-top: 94px;
+    margin-bottom: 50px;
 }
         
     .our-team-member{
-        display: inline-block;
-        margin-right: 30px;
-        margin-bottom: 30px;
         background-color:var(--member-card-bg-color);
         width: 270px;
-        border-radius: 0px 0px 4px 4px;
         text-align: center;
+        background: #FFFFFF;
         box-shadow: 
             0px 2px 1px rgba(0, 0, 0, 0.2),
             0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -357,63 +349,96 @@ footer{
         border-radius: 0px 0px 4px 4px;
     }
 
-        .our-team-member h3{
-            margin-top: 30px;
-            margin-bottom: 10px;
-        }
-
         .our-team-member b{
+            display: inline-block;
+            margin-bottom: 16px;
             font-family: var(--main-font-family);
             font-style: normal;
             font-weight: 400;
             font-size: 16px;
-            line-height: 1.9;
             text-align: center;
             color: var(--secondary-font-color);
         }
 
-        .social{
-            padding-left: 0px;
+        .our-team-member img{
+            margin-bottom: 30px;
+        }
+    
+        .our-team-member h3{
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    
+        .our-team-member .social{
+            margin-left: 32px;
+            margin-right: 32px;
+            justify-content: space-between;
         }
 
-            .social li{
-                line-height: 44px;
-                margin-top: 16px;
-                margin-right: 10px;
-                margin-bottom: 24px;
-            }
-                .social a,
-                .join a{ /* .join icons in footer */
-                    display: block;
-                    width: 44px;
-                    height: 44px;
-                }
+        .social li{
+            width: 44px;
+            height: 44px;
+            margin-bottom: 24px;
+            justify-content: space-evenly;
+            border-radius: 50%;
+        }
+
+        .social a{
+            width: 44px;
+            height: 44px;
+            display: block;
+        }
+
+        footer .social a{
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social li:hover,
+        .social li:focus{
+            background-color: var(--main-hover-color);
+        }
             
             .instagram {background-image: url("../images/instagramico.svg");}
             .twitter {background-image: url("../images/twitterico.svg");}
             .facebook {background-image: url("../images/facebookico.svg");}
             .linkedin {background-image: url("../images/linkedinico.svg");}
+
+            footer .social li{
+                background-repeat: no-repeat;
+                background-position: center;
+            } 
+
+            footer .instagram {background-image: url("../images/footer-img/instagram.svg");}
+            footer .twitter {background-image: url("../images/footer-img/twitter.svg");}
+            footer .facebook {background-image: url("../images/footer-img/facebook.svg");}
+            footer .linkedin {background-image: url("../images/footer-img/linkedin.svg");}
             
 
 
 /*in section clients ===================== index.html ================================================*/
 .clients{
     text-align: center;
+    margin-top: 94px;
 }
+    .clients .section-title{
+        margin-bottom: 50px;
+    }
+
+    .clients-list{
+        justify-content: space-between;
+        margin-bottom: 94px;
+    }
 
     .clients li{
-        display: inline-block;
         width: 170px;
         line-height: 90px;
-        border: 1px solid var(--clients-border-color);
-
+        border: 1px solid #AFB1B8;
+        box-sizing: border-box;
         border-radius: 4px;
-        margin-right: 30px;
-        margin-bottom: 30px;
     }
-    
-    .clients li:hover,
-    .clients li:focus{
+
+    .clients li:hover{
         border: 1px solid var(--main-hover-color);
     }
 
@@ -434,131 +459,90 @@ footer{
 
 /*in section portfolio ===================== portfolio.html ================================================*/    
 .portfolio{
+    margin-top: 93px;
     max-width: var(--max-width);
 }
 
     .btn-group{
-        text-align: center;
-        padding-top: 93px;
         margin-bottom: 50px;
+        text-align: center;
+        justify-content: center;
     }
 
-    .btn-group li{
+    .btn-group li:not(:last-child){
         margin-right: 8px;
-        margin-bottom: 0px;
     }
 
-    .btn-group button{
-        margin-bottom: 2px;
-        line-height: 26px;
-        background-color: var(--secondary-bg-color);
-        font-family: var(--main-font-family);
-        border-radius: 4px;
-        border-style: none;
-        font-weight: 700;
-        padding: 6px 22px 6px 22px;
-        letter-spacing: 0.05em;
-    }
+        .btn-group button{
+            padding: 6px 22px;
+            font-size: 16px;
+            line-height: 1.6;
+            background-color: var(--secondary-bg-color);
+            font-family: var(--main-font-family);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            border: none;
+            box-shadow:
+                0px 2px 2px rgba(0, 0, 0, 0.12),
+                0px 1px 2px rgba(0, 0, 0, 0.08),
+                0px 3px 1px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
 
-    .btn-group button:hover,
-    .btn-group button:focus{
-        background-color: var(--main-hover-color);
-        color: var(--secondary-bg-color);
-        box-shadow:
-            0px 2px 2px rgba(0, 0, 0, 0.12),
-            0px 1px 2px rgba(0, 0, 0, 0.08),
-            0px 3px 1px rgba(0, 0, 0, 0.1);
-    }
+        .btn-group button:hover,
+        .btn-group button:focus{
+            background-color: var(--main-hover-color);
+            color: var(--secondary-bg-color);
+        }
 
     .ul-portfolio{
         text-align: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        overflow: hidden;
+        margin-bottom: 94px;
     }
 
-    .ul-portfolio li{
-        display: inline-block;
-        width: 370px;
-        border: 1px solid var(--portfolio-card-border-color);
-                overflow: hidden;
-    }
+        .ul-portfolio li{
+            width: 370px;
+            border: 1px solid #EEEEEE;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
 
-    .ul-portfolio li h2,
-    .ul-portfolio li .filter{
-        padding-left: 24px;
-    }
-
-    .ul-portfolio li:hover,
-    .ul-portfolio li:focus{
-        box-shadow: 1px 4px 6px
-        rgba(0, 0, 0, 0.16), 0px 4px 4px
-        rgba(0, 0, 0, 0.06), 0px 1px 1px
-        rgba(0, 0, 0, 0.12);
-    }
-
-    .ul-portfolio li h2, .ul-portfolio li p{
-        text-align: left;
-    } 
-
-    .ul-portfolio a{
-        text-decoration: none;
-        display: inline-block;
-        width: inherit;
-    }
-
-    .ul-portfolio li{
-        height: 404px;
-        background-repeat: no-repeat;
-        background-position: top;
-    }
-
-    .project1{ background-image: url("../images/portfolio/project1.jpg"); }
-    .project2{ background-image: url("../images/portfolio/project2.jpg"); }
-    .project3{ background-image: url("../images/portfolio/project3.jpg"); }
-    .project4{ background-image: url("../images/portfolio/project4.jpg"); }
-    .project5{ background-image: url("../images/portfolio/project5.jpg"); }
-    .project6{ background-image: url("../images/portfolio/project6.jpg"); }
-    .project7{ background-image: url("../images/portfolio/project7.jpg"); }
-    .project8{ background-image: url("../images/portfolio/project8.jpg"); }
-    .project9{ background-image: url("../images/portfolio/project9.jpg"); }
-
-    .ul-portfolio div{ vertical-align: bottom; }
-
-    .ul-portfolio a h2{
-        color: var(--main-font-color);
-        margin-top: 20px;
-        margin-bottom: 4px;
-        font-family: var(--main-font-family);
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 36px;
-        letter-spacing: 0.06em;
-    }
-
-    .ul-portfolio p{
-        color: var(--secondary-font-color);
-        margin-top: 0px;
-        font-family: var(--main-font-family);
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 30px;
-    }
-
-    .hover-text span{
-        display: block;
-        margin: 0;
-        padding: 0;
-        padding: 63px 24px;
-    }
-
-    .ul-portfolio .hover-text span{
-        visibility: hidden;
-        background-color: rgba(33, 150, 243, 0.9);
-        color: var(--main-font-on-dark-fon-color);
-        height: 294px;
-    }
-    
-    .ul-portfolio .hover-text:hover span,
-    .ul-portfolio .hover-text:focus span{
-        visibility: visible;
-    }
+        .ul-portfolio li:nth-child(n+7){
+            margin-bottom: 0
+        }
+        
+            .ul-portfolio a{
+                display: block;
+                text-decoration: none;
+                width: inherit;
+            }
+            
+            .ul-portfolio li h2,
+                .ul-portfolio li p{
+                    padding-left: 24px;
+                    text-align: left;
+                }
+                
+                .ul-portfolio a h2{
+                    margin-top: 20px;
+                    color: var(--main-font-color);
+                    font-family: var(--main-font-family);
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 2.25;
+                    letter-spacing: 0.06em;
+                }
+                
+                .ul-portfolio p{
+                    margin-top: 9px;
+                    padding-bottom: 20px;
+                    color: var(--secondary-font-color);
+                    font-family: var(--main-font-family);
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                }
