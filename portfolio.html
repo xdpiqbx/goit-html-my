@@ -16,17 +16,28 @@
             <nav class="top flex-container">
                 <a class="logo" href="./index.html" aria-label="Главная страница"><span>Web</span> Studio</a>
                 <ul class="top-nav-ul flex-container">
-                    <li><a href="./index.html">Студия</a></li>
-                    <li><a class="active-page" href="#">Портфолио</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="./index.html" class="hover-effect">Студия</a></li>
+                    <li class="active-page"><a href="#" class="hover-effect">Портфолио</a></li>
+                    <li><a href="#" class="hover-effect">Контакты</a></li>
                 </ul>
             </nav>
             <address class="addres-header flex-container">
                 <ul class="contact flex-container">
                     <li class="envelope">
-                        <a href="mailto:info@devstudio.com" aria-label="e-mail">info@devstudio.com</a>
+                        <a href="mailto:info@devstudio.com" class="hover-effect" aria-label="e-mail">
+                            <svg class="address-icon">
+                                <use href="./images/sprite.svg#envelope"></use>
+                            </svg>
+                            <span>info@devstudio.com</span>
+                        </a>
                     </li>
-                    <li class="phone"><a href="tel:+380961111111" aria-label="Телефон">+380 (96) 111 11 11</a>
+                    <li class="phone">
+                        <a href="tel:+380961111111" class="hover-effect" aria-label="Телефон">
+                            <svg class="address-icon">
+                                <use href="./images/sprite.svg#smartphone"></use>
+                            </svg>
+                            <span>+380 (96) 111 11 11</span>
+                        </a>
                     </li>
                 </ul>
             </address>
