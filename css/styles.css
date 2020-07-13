@@ -325,7 +325,13 @@ header div.section{
     margin-right: 30px;
 }
 
+.what-we-do-list li{
+    position: relative;
+}
+
 .what-we-do a{
+    position: absolute;
+    bottom: 0;
     color: var(--main-font-on-dark-fon-color);
     display: flex;
     justify-content: center;
