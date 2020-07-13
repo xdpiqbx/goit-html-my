@@ -267,9 +267,18 @@ header div.section{
     text-align: center;
 }
 
+    .benefits-list.flex-container{
+        justify-content: center;
+    }
+
     .benefits-list li{
         width: 270px;
         text-align: left;
+        margin-right: 30px;
+    }
+    
+    .benefits-list li:last-child{
+        margin-right: 0;
     }
 
     .benefits-list li h3{
@@ -309,7 +318,11 @@ header div.section{
 }
 
 .what-we-do-list{
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.what-we-do-list li:not(:last-child){
+    margin-right: 30px;
 }
 
 .what-we-do a{
@@ -339,7 +352,7 @@ header div.section{
 }
 
 .our-team-list{
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .our-team h2{
@@ -347,6 +360,7 @@ header div.section{
 }
         
     .our-team-member{
+        margin-right: 30px;
         padding-bottom: 24px;
         background-color:var(--member-card-bg-color);
         width: 270px;
@@ -357,6 +371,10 @@ header div.section{
             0px 1px 1px rgba(0, 0, 0, 0.14),
             0px 1px 3px rgba(0, 0, 0, 0.12);
         border-radius: 0px 0px 4px 4px;
+    }
+
+    .our-team-member:last-child{
+        margin-right: 0;
     }
 
         .our-team-member b{
@@ -423,12 +441,17 @@ header div.section{
 .clients{
     text-align: center;
 }
+
+.clients-list li:not(:last-child){
+    margin-right: 30px;
+}
+
     .clients .section-title{
         margin-bottom: 50px;
     }
 
     .clients-list{
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .clients li{
@@ -489,7 +512,6 @@ header div.section{
     .ul-portfolio{
         text-align: center;
         justify-content: center;
-        overflow: visible;
     }
 
         .ul-portfolio li{
@@ -501,6 +523,26 @@ header div.section{
             overflow: hidden;
         }
 
+        .ul-portfolio li a div{
+            position: relative;
+        }
+
+        .hover-text{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 63px 24px;
+            background: rgba(33, 150, 243, 0.9);
+            color: var(--main-font-on-dark-fon-color);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 28px;
+            opacity: 0;
+        }
+
+        .ul-portfolio a:hover .hover-text{
+            opacity: 1;
+        }
 
         .ul-portfolio li:hover{
             box-sizing: border-box;
@@ -520,6 +562,7 @@ header div.section{
         
             .ul-portfolio a{
                 display: block;
+                position: relative;
                 text-decoration: none;
                 width: inherit;
             }
@@ -541,7 +584,7 @@ header div.section{
                     letter-spacing: 0.06em;
                 }
                 
-                .ul-portfolio p{
+                .ul-portfolio .filter{
                     margin-top: 9px;
                     padding-bottom: 20px;
                     color: var(--secondary-font-color);
@@ -567,6 +610,10 @@ footer div.section{
     .wrapper-in-footer{
         padding-top: 60px;
         max-width: var(--max-width);
+    }
+
+    footer .flex-container{
+        align-items: baseline;
     }
 
     footer div{
