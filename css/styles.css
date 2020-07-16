@@ -10,13 +10,32 @@
     --secondary-bg-color: #F5F4FA;
     --member-card-bg-color: #ffffff;
     --what-we-do-card-header-bg-color: rgba(70, 73, 109, 0.8);
+    --portfolio-card-hover-bg: rgba(33, 150, 243, 0.9);
     --footer-bg-color: #2F303A;
 
     --header-border-color: #ECECEC;
     --clients-border-color: #AFB1B8;
     --portfolio-card-border-color: #EEEEEE;
+
+    --swg-icons-main-color: #AFB1B8;
+
+    --portfolio-card-shadow:
+        0px 2px 2px rgba(0, 0, 0, 0.12),
+        0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 3px 1px rgba(0, 0, 0, 0.1);
+
+    --our-team-member-shadow:
+        0px 2px 1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12);
+
+    --hero-gradient-1: rgba(47, 48, 58, 0.8);
+    --hero-gradient-2: rgba(47, 48, 58, 0.8);
     
     --main-hover-color: #2196F3;
+
+    --time: 250ms;
+    --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 
     --max-width: 1200px;
 }
@@ -140,7 +159,7 @@ header div.section{
         
             .addres-header a{
                 color: var(--secondary-font-color);
-                fill: #757575;
+                fill: var(--secondary-font-color);
             }
 
             .contact li:not(:last-child){
@@ -150,23 +169,11 @@ header div.section{
             .contact a{
                 min-height: 80px;
             }
-
+            
             .address-icon{
                 display: inline;
-            }
-          
-            .envelope .address-icon{
                 width: 16px;
                 height: 16px;
-            }
-
-            .phone .address-icon{
-                width: 10px;
-                height: 16px;
-            }
-
-            .address-icon:hover{
-                fill: var(--main-hover-color);
             }
 
                 .contact span{
@@ -205,16 +212,15 @@ header div.section{
 
 /*Main element ===================== index.html ================================================*/
 .hero{
-    text-align: center;
-    background-image: url("../images/hero-image.jpg");
-    background-position: center;
+    margin: 0 auto;
     height: 600px;
+    max-width: 1600px;
+    text-align: center;
+    background-image:
+                linear-gradient(to right, var(--hero-gradient-1),var(--hero-gradient-2)),
+                url("../images/hero-image.jpg");
+    background-position: center;
 }
-
-    .wrapper-bg-transparent-in-hero{
-        background-color: rgba(47, 48, 58, 0.8);
-        height: 100%;
-    }
 
     .hero h1{
         margin-top:0;
@@ -371,11 +377,8 @@ header div.section{
         background-color:var(--member-card-bg-color);
         width: 270px;
         text-align: center;
-        background: #FFFFFF;
-        box-shadow: 
-            0px 2px 1px rgba(0, 0, 0, 0.2),
-            0px 1px 1px rgba(0, 0, 0, 0.14),
-            0px 1px 3px rgba(0, 0, 0, 0.12);
+        background: var(--member-card-bg-color);
+        box-shadow: var(--our-team-member-shadow);
         border-radius: 0px 0px 4px 4px;
     }
 
@@ -420,7 +423,7 @@ header div.section{
             display: block;
             height: 44px;
             border-radius: 50%;
-            fill: #AFB1B8;
+            fill: var(--swg-icons-main-color);
         }
 
             .social .button-icon{
@@ -433,12 +436,12 @@ header div.section{
             .social a:hover,
             .social a:focus{
                 background-color: var(--main-hover-color);
-                fill:#ffffff;
+                fill:var(--main-font-on-dark-fon-color);
             }
 
             footer .social .button-icon{
                 background-color:rgba(255, 255, 255, 0.1);
-                fill: #ffffff;
+                fill: var(--main-font-on-dark-fon-color);
             }
             
 
@@ -471,8 +474,8 @@ header div.section{
         align-items: center;
         width: 100%;
         height: 100%;
-        border: 1px solid #AFB1B8;
-        fill: #afb1b8;
+        border: 1px solid var(--swg-icons-main-color);
+        fill: var(--swg-icons-main-color);
         box-sizing: border-box;
         border-radius: 4px;
     }
@@ -502,10 +505,9 @@ header div.section{
             font-weight: 700;
             letter-spacing: 0.05em;
             border: none;
-            box-shadow:
-                0px 2px 2px rgba(0, 0, 0, 0.12),
-                0px 1px 2px rgba(0, 0, 0, 0.08),
-                0px 3px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--portfolio-card-shadow);
+            
+
             border-radius: 4px;
         }
 
@@ -522,7 +524,7 @@ header div.section{
 
         .ul-portfolio li{
             width: 370px;
-            border: 1px solid #EEEEEE;
+            border: 1px solid var(--portfolio-card-border-color);
             box-sizing: border-box;
             margin-right: 30px;
             margin-bottom: 30px;
@@ -538,7 +540,7 @@ header div.section{
             width: 100%;
             height: 100%;
             padding: 63px 24px;
-            background: rgba(33, 150, 243, 0.9);
+            background: var(--portfolio-card-hover-bg);
             color: var(--main-font-on-dark-fon-color);
             font-weight: 400;
             font-size: 18px;
@@ -546,7 +548,7 @@ header div.section{
             opacity: 0;
         }
 
-        .ul-portfolio a:hover .hover-text{
+        .ul-portfolio li:hover .hover-text{
             opacity: 1;
         }
 
